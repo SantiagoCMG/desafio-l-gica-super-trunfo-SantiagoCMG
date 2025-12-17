@@ -46,6 +46,7 @@
 }]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="mock://C:/Users/santi/CLionProjects/desafio-l-gica-super-trunfo-SantiagoCMG/logicaSuperTrunfo.c" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/santi/CLionProjects/desafio-l-gica-super-trunfo-SantiagoCMG/logicaSuperTrunfo.c" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="yfwz7M1J" />
@@ -95,7 +96,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1765989112570</updated>
-      <workItem from="1765989113856" duration="7407000" />
+      <workItem from="1765989113856" duration="7884000" />
     </task>
     <task id="LOCAL-00001" summary="Comparando Cartas do Super Trunfo">
       <option name="closed" value="true" />
