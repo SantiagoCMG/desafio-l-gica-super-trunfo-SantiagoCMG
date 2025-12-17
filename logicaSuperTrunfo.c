@@ -1,22 +1,22 @@
 #include <stdio.h>
 
 typedef struct {
-    char nomeEstado[50];
+    char nomedoPais[50];
     char codigo[10];
     int populacao;          // em milhões
     float area;             // em mil km²
-    float pib;              // em trilhões
-    int pontosTuristicos;
-} Estado;
+    float pib;              // em trilhões - eu nao achei os dados corretos entao eu chutei desculpa
+    int pontosTuristicos;   // peguei estimativa
+} Pais;
 
 int main() {
-
-    Estado rj = {"Rio de Janeiro", "RJ", 17, 43.7, 1.1, 120};
-    Estado sp = {"Sao Paulo", "SP", 46, 248.2, 3.4, 180};
+    //OS PAISES EM QUESTAO
+    Pais Brazil   = {"Brasil", "BR", 203, 8515.0,2.1, 300};
+    Pais Portugal = {"Portugal", "PT", 10, 92.0,0.29, 140};
 
     int opcao;
     do {
-        printf("Escolha o atributo para comparar:\n");
+        printf("\nEscolha o atributo para comparar:\n");
         printf("1 - Populacao\n");
         printf("2 - Area\n");
         printf("3 - PIB\n");
@@ -24,60 +24,65 @@ int main() {
         printf("0 - Sair\n");
         scanf("%d", &opcao);
 
-        printf("\nComparando %s vs %s\n\n", rj.nomeEstado, sp.nomeEstado);
+        printf("\nComparando %s vs %s\n\n",
+               Brazil.nomedoPais, Portugal.nomedoPais);
 
         switch (opcao) {
 
             case 1:
                 printf("Populacao (milhoes):\n");
-                printf("%s: %d\n", rj.nomeEstado, rj.populacao);
-                printf("%s: %d\n", sp.nomeEstado, sp.populacao);
+                printf("%s: %d\n", Brazil.nomedoPais, Brazil.populacao);
+                printf("%s: %d\n", Portugal.nomedoPais, Portugal.populacao);
 
-                if (sp.populacao > rj.populacao)
-                    printf("Vencedor: %s\n", sp.nomeEstado);
+                if (Portugal.populacao > Brazil.populacao)
+                    printf("Vencedor: %s\n", Portugal.nomedoPais);
                 else
-                    printf("Vencedor: %s\n", rj.nomeEstado);
+                    printf("Vencedor: %s\n", Brazil.nomedoPais);
                 break;
 
             case 2:
                 printf("Area (mil km2):\n");
-                printf("%s: %.2f\n", rj.nomeEstado, rj.area);
-                printf("%s: %.2f\n", sp.nomeEstado, sp.area);
+                printf("%s: %.2f\n", Brazil.nomedoPais, Brazil.area);
+                printf("%s: %.2f\n", Portugal.nomedoPais, Portugal.area);
 
-                if (sp.area > rj.area)
-                    printf("Vencedor: %s\n", sp.nomeEstado);
+                if (Portugal.area > Brazil.area)
+                    printf("Vencedor: %s\n", Portugal.nomedoPais);
                 else
-                    printf("Vencedor: %s\n", rj.nomeEstado);
+                    printf("Vencedor: %s\n", Brazil.nomedoPais);
                 break;
 
             case 3:
-                printf("PIB (trilhoes):\n");
-                printf("%s: %.2f\n", rj.nomeEstado, rj.pib);
-                printf("%s: %.2f\n", sp.nomeEstado, sp.pib);
+                printf("PIB (trilhoes USD):\n");
+                printf("%s: %.2f\n", Brazil.nomedoPais, Brazil.pib);
+                printf("%s: %.2f\n", Portugal.nomedoPais, Portugal.pib);
 
-                if (sp.pib > rj.pib)
-                    printf("Vencedor: %s\n", sp.nomeEstado);
+                if (Portugal.pib > Brazil.pib)
+                    printf("Vencedor: %s\n", Portugal.nomedoPais);
                 else
-                    printf("Vencedor: %s\n", rj.nomeEstado);
+                    printf("Vencedor: %s\n", Brazil.nomedoPais);
                 break;
 
             case 4:
                 printf("Pontos Turisticos:\n");
-                printf("%s: %d\n", rj.nomeEstado, rj.pontosTuristicos);
-                printf("%s: %d\n", sp.nomeEstado, sp.pontosTuristicos);
+                printf("%s: %d\n", Brazil.nomedoPais, Brazil.pontosTuristicos);
+                printf("%s: %d\n", Portugal.nomedoPais, Portugal.pontosTuristicos);
 
-                if (sp.pontosTuristicos > rj.pontosTuristicos)
-                    printf("Vencedor: %s\n", sp.nomeEstado);
+                if (Portugal.pontosTuristicos > Brazil.pontosTuristicos)
+                    printf("Vencedor: %s\n", Portugal.nomedoPais);
                 else
-                    printf("Vencedor: %s\n", rj.nomeEstado);
+                    printf("Vencedor: %s\n", Brazil.nomedoPais);
                 break;
+
             case 0:
                 printf("Saindo do programa...\n");
                 break;
+
             default:
                 printf("Opcao invalida!\n");
         }
-    }while (opcao != 0);
+
+    } while (opcao != 0);
 
     return 0;
+    // por algum motivo eu achei que o primero era estado ai que vi que era pais
 }
